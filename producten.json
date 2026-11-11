@@ -1,0 +1,442 @@
+[
+ {
+  "naam": "AeroPress",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Voor de koffieliefhebber die graag experimenteert.",
+  "anders": "diegene alleen capsules gebruikt.",
+  "zoekterm": "aeropress"
+ },
+ {
+  "naam": "Handkoffiemolen",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Versgemalen bonen smaken merkbaar beter.",
+  "anders": "er al een elektrische molen staat.",
+  "zoekterm": "handkoffiemolen"
+ },
+ {
+  "naam": "Hario V60 koffieset",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Voor wie rustig filterkoffie wil leren zetten.",
+  "anders": "diegene in de ochtend altijd haast heeft.",
+  "zoekterm": "hario v60 set"
+ },
+ {
+  "naam": "Elektrische melkopschuimer",
+  "voor": "fijnproever",
+  "budget": 4,
+  "waarom": "Cappuccino thuis zonder dure machine.",
+  "anders": "diegene zijn koffie zwart drinkt.",
+  "zoekterm": "melkopschuimer elektrisch"
+ },
+ {
+  "naam": "Gietijzeren braadpan",
+  "voor": "fijnproever",
+  "budget": 4,
+  "waarom": "Een pan voor stoofpotten die een leven lang meegaat.",
+  "anders": "diegene zelden langer dan een halfuur kookt.",
+  "zoekterm": "gietijzeren braadpan"
+ },
+ {
+  "naam": "Koksmes",
+  "voor": "fijnproever",
+  "budget": 4,
+  "waarom": "Een scherp mes maakt koken elke dag prettiger.",
+  "anders": "diegene al een goed mes heeft.",
+  "zoekterm": "koksmes"
+ },
+ {
+  "naam": "Pizzasteen",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Voor de thuiskok die zelf pizza bakt in de oven of op de barbecue.",
+  "anders": "diegene zelden deeg maakt.",
+  "zoekterm": "pizzasteen"
+ },
+ {
+  "naam": "Peugeot pepermolen",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Een mooie molen staat elke dag op tafel.",
+  "anders": "er al een goede molen staat.",
+  "zoekterm": "peugeot pepermolen"
+ },
+ {
+  "naam": "Cocktailset",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Voor wie graag gasten ontvangt.",
+  "anders": "diegene geen alcohol drinkt.",
+  "zoekterm": "cocktailset"
+ },
+ {
+  "naam": "Borrelplank",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Voor mensen die graag gasten ontvangen.",
+  "anders": "de keukenkastjes al vol liggen.",
+  "zoekterm": "borrelplank"
+ },
+ {
+  "naam": "Kookboek van Ottolenghi",
+  "voor": "fijnproever",
+  "budget": 3,
+  "waarom": "Voor thuiskoks die iets nieuws willen proberen.",
+  "anders": "diegene liever snel en simpel kookt.",
+  "zoekterm": "ottolenghi kookboek"
+ },
+ {
+  "naam": "Olijfolie-cadeauset",
+  "voor": "fijnproever",
+  "budget": 2,
+  "waarom": "Gaat op en staat mooi op het aanrecht.",
+  "anders": "diegene zelden kookt.",
+  "zoekterm": "olijfolie cadeauset"
+ },
+ {
+  "naam": "Theepakket",
+  "voor": "fijnproever",
+  "budget": 2,
+  "waarom": "Voor wie geen koffie drinkt.",
+  "anders": "diegene alleen koffie drinkt.",
+  "zoekterm": "thee cadeauset"
+ },
+ {
+  "naam": "Plaid",
+  "voor": "huis",
+  "budget": 3,
+  "waarom": "Past in bijna elk interieur als je een rustige kleur kiest.",
+  "anders": "je de stijl van het huis helemaal niet kent.",
+  "zoekterm": "plaid"
+ },
+ {
+  "naam": "Oplaadbare tafellamp",
+  "voor": "huis",
+  "budget": 3,
+  "waarom": "Draadloos licht voor op tafel, de vensterbank of het balkon.",
+  "anders": "de woning al vol sfeerlampen staat.",
+  "zoekterm": "oplaadbare tafellamp"
+ },
+ {
+  "naam": "Vaas",
+  "voor": "huis",
+  "budget": 3,
+  "waarom": "Staat ook mooi zonder bloemen.",
+  "anders": "je de stijl van het huis niet kent.",
+  "zoekterm": "vaas"
+ },
+ {
+  "naam": "Gereedschapsset",
+  "voor": "huis",
+  "budget": 3,
+  "waarom": "Voor wie voor het eerst op zichzelf woont.",
+  "anders": "er al een volle gereedschapskist staat.",
+  "zoekterm": "gereedschapsset"
+ },
+ {
+  "naam": "Kamerplant",
+  "voor": "huis",
+  "budget": 2,
+  "waarom": "Maakt een leeg huis meteen bewoond.",
+  "anders": "diegene planten laat doodgaan.",
+  "zoekterm": "kamerplant"
+ },
+ {
+  "naam": "Victorinox zakmes",
+  "voor": "hem",
+  "budget": 3,
+  "waarom": "Gaat jaren mee en past in elke jaszak.",
+  "anders": "hij er al een heeft of zelden buiten komt.",
+  "zoekterm": "victorinox zakmes"
+ },
+ {
+  "naam": "JBL Go bluetooth speaker",
+  "voor": "hem",
+  "budget": 3,
+  "waarom": "Klein genoeg voor de douche, het strand en de schuur.",
+  "anders": "hij al een speaker heeft.",
+  "zoekterm": "jbl go speaker"
+ },
+ {
+  "naam": "Toilettas",
+  "voor": "hem",
+  "budget": 3,
+  "waarom": "Voor wie vaak een nachtje weg is.",
+  "anders": "je zijn smaak niet goed kent.",
+  "zoekterm": "toilettas heren"
+ },
+ {
+  "naam": "Weekendtas",
+  "voor": "hem",
+  "budget": 4,
+  "waarom": "Een groot cadeau dat hij zelf niet snel koopt.",
+  "anders": "je zijn smaak niet goed kent.",
+  "zoekterm": "weekendtas heren"
+ },
+ {
+  "naam": "Speciaalbierpakket",
+  "voor": "hem",
+  "budget": 2,
+  "waarom": "Gaat op, dus het wordt nooit een stofvanger.",
+  "anders": "hij geen alcohol drinkt.",
+  "zoekterm": "speciaalbier pakket"
+ },
+ {
+  "naam": "BBQ-kookboek",
+  "voor": "hem",
+  "budget": 2,
+  "waarom": "Voor wie bij elke zonnestraal de barbecue aansteekt.",
+  "anders": "hij niet kookt.",
+  "zoekterm": "bbq kookboek"
+ },
+ {
+  "naam": "Sokken met een foute print",
+  "voor": "hem",
+  "budget": 1,
+  "waarom": "Veilige grap voor een lootje.",
+  "anders": "hij van sobere kleding houdt.",
+  "zoekterm": "grappige sokken heren"
+ },
+ {
+  "naam": "Rituals giftset",
+  "voor": "haar",
+  "budget": 3,
+  "waarom": "Ziet er luxe uit en gaat op.",
+  "anders": "ze gevoelig is voor geurtjes.",
+  "zoekterm": "rituals giftset"
+ },
+ {
+  "naam": "Zijden kussensloop",
+  "voor": "haar",
+  "budget": 3,
+  "waarom": "Iets wat ze elke nacht gebruikt en zelf niet koopt.",
+  "anders": "je de maat van haar kussen niet kent.",
+  "zoekterm": "zijden kussensloop"
+ },
+ {
+  "naam": "Badjas",
+  "voor": "haar",
+  "budget": 4,
+  "waarom": "Een warm cadeau voor koude ochtenden.",
+  "anders": "je haar maat niet weet.",
+  "zoekterm": "badjas dames"
+ },
+ {
+  "naam": "Geurkaars",
+  "voor": "haar",
+  "budget": 2,
+  "waarom": "Maakt een kamer meteen gezelliger.",
+  "anders": "ze niet van geurtjes in huis houdt.",
+  "zoekterm": "geurkaars"
+ },
+ {
+  "naam": "Moleskine notitieboek",
+  "voor": "haar",
+  "budget": 2,
+  "waarom": "Voor wie lijstjes en plannen op papier zet.",
+  "anders": "ze alles in haar telefoon bijhoudt.",
+  "zoekterm": "moleskine notitieboek"
+ },
+ {
+  "naam": "Handcreme",
+  "voor": "haar",
+  "budget": 1,
+  "waarom": "Nuttig in de winter en past in elke tas.",
+  "anders": "je iets persoonlijkers zoekt.",
+  "zoekterm": "handcreme cadeau"
+ },
+ {
+  "naam": "LEGO bouwset",
+  "voor": "kind",
+  "budget": 3,
+  "waarom": "Eerst uren bouwen, daarna ermee spelen.",
+  "anders": "je niet weet welk thema het kind leuk vindt.",
+  "zoekterm": "lego set"
+ },
+ {
+  "naam": "Step",
+  "voor": "kind",
+  "budget": 4,
+  "waarom": "Het grote cadeau waarmee ze elke dag naar buiten gaan.",
+  "anders": "er al een in de schuur staat.",
+  "zoekterm": "step kinderen"
+ },
+ {
+  "naam": "Dobble",
+  "voor": "kind",
+  "budget": 2,
+  "waarom": "In twee minuten uitgelegd en leuk vanaf 6 jaar.",
+  "anders": "het gezin het al heeft.",
+  "zoekterm": "dobble"
+ },
+ {
+  "naam": "Knutselset",
+  "voor": "kind",
+  "budget": 2,
+  "waarom": "Voor regenachtige middagen in december.",
+  "anders": "de ouders een hekel hebben aan glitter.",
+  "zoekterm": "knutselset kinderen"
+ },
+ {
+  "naam": "Rubik's Cube",
+  "voor": "kind",
+  "budget": 2,
+  "waarom": "Een uitdaging voor kinderen vanaf een jaar of 8.",
+  "anders": "het kind snel opgeeft.",
+  "zoekterm": "rubiks cube"
+ },
+ {
+  "naam": "Uno",
+  "voor": "kind",
+  "budget": 1,
+  "waarom": "Klassieker die mee kan op vakantie.",
+  "anders": "het al in de kast ligt.",
+  "zoekterm": "uno kaartspel"
+ },
+ {
+  "naam": "Stickerboek",
+  "voor": "kind",
+  "budget": 1,
+  "waarom": "Goed schoencadeautje voor kleuters.",
+  "anders": "het kind ouder is dan 8.",
+  "zoekterm": "stickerboek"
+ },
+ {
+  "naam": "Thermosbeker",
+  "voor": "collega",
+  "budget": 2,
+  "waarom": "Voor wie koffie meeneemt in de trein of auto.",
+  "anders": "diegene altijd thuiswerkt.",
+  "zoekterm": "thermosbeker"
+ },
+ {
+  "naam": "Exploding Kittens",
+  "voor": "collega",
+  "budget": 2,
+  "waarom": "Grappig kaartspel voor de vrijdagmiddagborrel.",
+  "anders": "je collega niet van spelletjes houdt.",
+  "zoekterm": "exploding kittens"
+ },
+ {
+  "naam": "Draadloze oplader",
+  "voor": "collega",
+  "budget": 2,
+  "waarom": "Handig op elk bureau.",
+  "anders": "je niet weet of de telefoon draadloos laadt.",
+  "zoekterm": "draadloze oplader"
+ },
+ {
+  "naam": "Koffiecadeaupakket",
+  "voor": "collega",
+  "budget": 2,
+  "waarom": "Veilige keuze voor iemand die je minder goed kent.",
+  "anders": "diegene alleen thee drinkt.",
+  "zoekterm": "koffie cadeaupakket"
+ },
+ {
+  "naam": "Tony's Chocolonely reep",
+  "voor": "collega",
+  "budget": 1,
+  "waarom": "Bijna iedereen lust het.",
+  "anders": "je collega geen chocola eet.",
+  "zoekterm": "tonys chocolonely"
+ },
+ {
+  "naam": "GTA 6",
+  "voor": "gamer",
+  "budget": 4,
+  "waarom": "De game waar iedere gamer het dit jaar over heeft.",
+  "anders": "diegene geen PS5 of Xbox Series heeft.",
+  "zoekterm": "GTA6"
+ },
+ {
+  "naam": "DualSense-controller",
+  "voor": "gamer",
+  "budget": 4,
+  "waarom": "Met een tweede controller kun je samen spelen.",
+  "anders": "er al twee liggen.",
+  "zoekterm": "dualsense controller"
+ },
+ {
+  "naam": "Gaming headset",
+  "voor": "gamer",
+  "budget": 3,
+  "waarom": "Voor wie online speelt met vrienden.",
+  "anders": "diegene al een goede headset heeft.",
+  "zoekterm": "gaming headset"
+ },
+ {
+  "naam": "Oplaadstation voor controllers",
+  "voor": "gamer",
+  "budget": 2,
+  "waarom": "Nooit meer een lege controller midden in een potje.",
+  "anders": "je niet weet welke console diegene heeft.",
+  "zoekterm": "controller oplaadstation"
+ },
+ {
+  "naam": "Muismat XL",
+  "voor": "gamer",
+  "budget": 2,
+  "waarom": "Voor pc-gamers met een vol bureau.",
+  "anders": "diegene op een console speelt.",
+  "zoekterm": "muismat xl"
+ },
+ {
+  "naam": "LEGO Botanicals bloemen",
+  "voor": "alles",
+  "budget": 4,
+  "waarom": "Bloemen die nooit verwelken en leuk zijn om te bouwen.",
+  "anders": "diegene geen geduld heeft voor bouwen.",
+  "zoekterm": "lego botanicals"
+ },
+ {
+  "naam": "Ticket to Ride Europa",
+  "voor": "alles",
+  "budget": 3,
+  "waarom": "Een bordspel dat ook niet-spelers leuk vinden.",
+  "anders": "diegene nooit spelletjes speelt.",
+  "zoekterm": "ticket to ride europa"
+ },
+ {
+  "naam": "Catan",
+  "voor": "alles",
+  "budget": 3,
+  "waarom": "De klassieker voor avonden met drie of vier.",
+  "anders": "het al in de kast staat, wat vaak zo is.",
+  "zoekterm": "catan basisspel"
+ },
+ {
+  "naam": "Anker powerbank",
+  "voor": "alles",
+  "budget": 3,
+  "waarom": "Iedereen heeft weleens een lege telefoon.",
+  "anders": "diegene er al een heeft.",
+  "zoekterm": "anker powerbank"
+ },
+ {
+  "naam": "Puzzel van 1000 stukjes",
+  "voor": "alles",
+  "budget": 2,
+  "waarom": "Rustig cadeau voor de kerstvakantie.",
+  "anders": "er geen tafel een week vrij kan blijven.",
+  "zoekterm": "puzzel 1000 stukjes"
+ },
+ {
+  "naam": "Leeslampje",
+  "voor": "alles",
+  "budget": 2,
+  "waarom": "Voor de lezer die in bed nog even doorleest.",
+  "anders": "diegene op een e-reader met verlichting leest.",
+  "zoekterm": "leeslampje boek"
+ },
+ {
+  "naam": "Actuele bestseller",
+  "voor": "alles",
+  "budget": 2,
+  "waarom": "Een boek uit de top 10 is een veilige keuze voor lezers.",
+  "anders": "diegene niet leest.",
+  "zoekterm": "boeken top 10"
+ }
+]

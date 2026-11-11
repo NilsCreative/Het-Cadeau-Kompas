@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadeau zoeken: vind in 20 seconden een cadeau dat past | Het Cadeaukompas</title>
+<meta name="description" content="Zeg voor wie je zoekt en wat je wilt uitgeven, en krijg een kleine selectie cadeaus met uitleg waarom het past en wanneer je beter iets anders kiest.">
+<link rel="canonical" href="https://hetcadeaukompas.nl/">
+<meta name="theme-color" content="#FAF3E7">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Het Cadeaukompas">
+<meta property="og:title" content="Vind een cadeau dat echt past">
+<meta property="og:description" content="Twee vragen, een handvol cadeaus, met een eerlijk woord erbij.">
+<meta property="og:url" content="https://hetcadeaukompas.nl/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Gloock&display=swap" rel="stylesheet">
+<style>
+:root{--papier:#FAF3E7;--inkt:#14213D;--koraal:#F26B4E;--rood:#C2402A;--groen:#1F6B4F;--rand:#E8DCC8;--grijs:#CFC2AC;--zacht:#4A5568;--mid:#2A3550}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:'Atkinson Hyperlegible',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.5}
+h1,h2,h3{margin:0;font-family:'Gloock',serif;font-weight:400;color:var(--inkt)}
+p{margin:0}
+a{color:var(--inkt)}
+a:hover{color:var(--rood)}
+h1{font-size:34px;line-height:1.1}
+h2{font-size:28px;line-height:1.12}
+h3{font-size:21px;line-height:1.15}
+@media(min-width:900px){h1{font-size:54px;line-height:1.05}h2{font-size:38px}h3{font-size:24px}}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+@media(min-width:900px){.wrap{padding:0 40px}}
+header.top{border-bottom:1px solid var(--rand)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Gloock',serif;font-size:19px}
+@media(min-width:900px){.logo{font-size:24px}}
+nav{display:flex;gap:20px;font-weight:700;font-size:15px;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none}
+.telknop{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--grijs);background:#fff;text-decoration:none;font-weight:700}
+section{padding-top:34px}
+@media(min-width:900px){section{padding-top:64px}}
+.hero{display:flex;flex-wrap:wrap;gap:32px;align-items:center;padding-top:28px}
+.herotekst{flex:1 1 420px;min-width:0}
+.kiezer{flex:1 1 460px;min-width:0;background:#fff;border:2px solid var(--inkt);border-radius:24px;padding:20px}
+@media(min-width:900px){.kiezer{padding:28px}}
+.vraag{font-weight:700;font-size:17px;margin-bottom:10px}
+@media(min-width:900px){.vraag{font-size:19px}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:46px;padding:0 16px;border-radius:999px;border:2px solid var(--grijs);background:#fff;color:var(--inkt);font-family:inherit;font-weight:700;font-size:15px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--inkt);color:#fff;border-color:var(--inkt)}
+.chip.vierkant{border-radius:12px}
+.kaarten{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:700px){.kaarten{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}}
+.kaart{background:#fff;border:1px solid var(--rand);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:12px}
+@media(min-width:900px){.kaart{padding:24px}}
+.kaartkop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.prijs{flex:0 0 auto;background:#FDE3DB;color:#8A2A18;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px}
+.label{font-size:13px;font-weight:700}
+.knop{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:12px;background:var(--inkt);color:#fff;font-weight:700;text-decoration:none;margin-top:auto}
+.knop:hover{background:#0B1630;color:#fff}
+.mini{display:flex;gap:8px}
+.mini button{flex:1 1 0;min-height:44px;border-radius:12px;border:1px solid var(--grijs);background:#fff;color:var(--inkt);font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.fijn{font-size:14px;color:var(--zacht)}
+.situaties{display:flex;flex-wrap:wrap;gap:12px}
+.situaties button{min-height:52px;padding:0 22px;border-radius:999px;border:1px solid var(--grijs);background:#fff;color:var(--inkt);font-family:inherit;font-weight:700;font-size:17px;cursor:pointer}
+.situaties button.vol{background:var(--inkt);color:#fff;border-color:var(--inkt)}
+.situaties button.koraal{background:var(--koraal);color:var(--inkt);border-color:var(--koraal)}
+.kolommen{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+@media(min-width:900px){.kolommen{gap:48px}}
+.gids{display:block;padding:18px 0;border-bottom:1px solid var(--rand);text-decoration:none}
+.gids b{display:block;font-family:'Gloock',serif;font-weight:400;font-size:20px;line-height:1.2}
+@media(min-width:900px){.gids b{font-size:24px}}
+.bewaard{background:var(--inkt);color:#fff;border-radius:24px;padding:24px}
+.bewaard h2{color:#fff}
+.bewaard a{color:#fff}
+.bewaardrij{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #33456E}
+.bewaardrij button{min-height:44px;padding:0 12px;border-radius:10px;border:1px solid #5A6C94;background:transparent;color:#fff;font-family:inherit;font-size:14px;cursor:pointer}
+.over{display:flex;gap:18px;align-items:flex-start}
+.bol{flex:0 0 56px;height:56px;border-radius:50%;background:var(--koraal);color:var(--inkt);display:flex;align-items:center;justify-content:center;font-family:'Gloock',serif;font-size:26px}
+.zuster{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:560px;min-height:72px;padding:14px 20px;background:#0D0A24;border-radius:16px;text-decoration:none;color:#fff}
+.zuster:hover{color:#fff}
+footer{margin-top:40px;border-top:1px solid var(--rand);color:var(--zacht);font-size:14px}
+footer .wrap{padding-top:28px;padding-bottom:36px}
+</style>
+</head>
+<body>
+
+<header class="top">
+<div class="wrap">
+<a class="logo" href="/"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" fill="none" stroke="#14213D" stroke-width="2"><circle cx="13" cy="13" r="11"/><path d="M17.5 8.5l-2.8 6.2-6.2 2.8 2.8-6.2z" fill="#F26B4E" stroke="#F26B4E"/></svg>Het Cadeaukompas</a>
+<nav>
+<a href="/sinterklaasgedicht">Gedicht maken</a>
+<a href="#gidsen">Gidsen</a>
+<a class="telknop" href="#bewaard"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="#F26B4E" stroke="#F26B4E" stroke-width="1.8"><path d="M8 13.5S2 9.8 2 5.9A3.2 3.2 0 0 1 8 4.4a3.2 3.2 0 0 1 6 1.5c0 3.9-6 7.6-6 7.6z"/></svg><span id="teller">0</span></a>
+</nav>
+</div>
+</header>
+
+<section style="padding-top:0">
+<div class="wrap hero">
+<div class="herotekst">
+<h1>Vind een cadeau dat <span style="color:var(--rood)">echt past</span></h1>
+<p style="margin-top:16px;font-size:19px;color:var(--mid)">Per persoon een kleine selectie, met een eerlijk woord erbij over voor wie het minder geschikt is.</p>
+</div>
+<div class="kiezer">
+<p class="vraag">Voor wie zoek je iets?</p>
+<div class="chips" id="wie"></div>
+<p class="vraag" style="margin-top:20px">Wat wil je uitgeven?</p>
+<div class="chips" id="budget"></div>
+</div>
+</div>
+</section>
+
+<section id="resultaat">
+<div class="wrap">
+<p style="font-weight:700;font-size:15px;color:var(--rood)">Jouw kompas wijst naar</p>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin:4px 0 20px">
+<h2 id="titel">Cadeaus</h2>
+<span class="fijn" id="aantal"></span>
+</div>
+<div class="kaarten" id="kaarten"></div>
+<p class="fijn" style="margin-top:18px">Prijsklassen zijn een indicatie. Via onze links naar bol ontvangen wij een kleine commissie. Jij betaalt daarvoor niets extra.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2 style="margin-bottom:18px">Veelgezochte situaties</h2>
+<div class="situaties">
+<button type="button" class="vol" data-wie="alles" data-budget="3">Voor iemand die alles al heeft</button>
+<button type="button" class="koraal" data-wie="huis" data-budget="3">Voor een housewarming</button>
+<button type="button" data-wie="collega" data-budget="1">Een kleinigheid onder &euro;10</button>
+<button type="button" data-wie="gamer" data-budget="4">Voor een gamer</button>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap kolommen">
+<div id="gidsen" style="flex:2 1 520px;min-width:0">
+<h2 style="margin-bottom:14px">Gidsen voor lastige gevallen</h2>
+<div style="border-top:1px solid var(--rand)">
+<a class="gids" href="#resultaat" data-wie="huis" data-budget="3"><b>Housewarmingcadeaus voor een klein appartement</b><span class="fijn">Mooi en nuttig, zonder dat het ruimte kost.</span></a>
+<a class="gids" href="#resultaat" data-wie="fijnproever" data-budget="3"><b>Cadeaus voor een koffieliefhebber onder &euro;50</b><span class="fijn">Van filter tot molen: wat past bij welke koffiedrinker.</span></a>
+<a class="gids" href="#resultaat" data-wie="collega" data-budget="2"><b>Een cadeau voor een collega die je minder goed kent</b><span class="fijn">Veilige keuzes die toch niet saai zijn.</span></a>
+</div>
+</div>
+<div style="flex:1 1 320px;min-width:0" id="bewaard">
+<div class="bewaard">
+<h2 style="font-size:26px">Jouw bewaarde idee&euml;n</h2>
+<div id="bewaardlijst"></div>
+<p style="margin-top:12px;font-size:15px;color:#D5DCEC">Klik op het hartje bij een cadeau om het hier te bewaren. Dat blijft staan op dit apparaat, zonder account.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap kolommen">
+<div class="over" style="flex:1 1 480px;min-width:0">
+<span class="bol" aria-hidden="true">N</span>
+<div>
+<h2 style="font-size:26px;margin-bottom:6px">Wie kiest deze cadeaus?</h2>
+<p style="color:var(--mid);max-width:520px">Ik ben Nils en ik kies elk cadeau op deze site zelf. Per persoon een kleine selectie, met een eerlijk woord erbij.</p>
+</div>
+</div>
+<a class="zuster" style="flex:0 1 420px" href="https://hetgamekompas.nl"><span><span style="display:block;font-weight:700;font-size:19px">Het Gamekompas</span><span style="display:block;font-size:15px;color:#C9BEE8">Ons zusje voor games en consoles</span></span><span aria-hidden="true" style="color:#22E4FF">&rsaquo;</span></a>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<p style="font-family:'Gloock',serif;font-size:19px;color:var(--inkt);margin-bottom:6px">Het Cadeaukompas</p>
+<p>Onafhankelijke cadeautips. Via sommige links ontvangen wij een kleine commissie. Jij betaalt daarvoor niets extra. Bijgewerkt op 11 november 2026.</p>
+</div>
+</footer>
+
+<script>
+(function(){
+  var S = '1558352';
+  var WIE = [['fijnproever','Een fijnproever'],['huis','Iemand met een nieuw huis'],['hem','Hem'],['haar','Haar'],['kind','Een kind'],['collega','Een collega'],['gamer','Een gamer'],['alles','Iemand die alles al heeft']];
+  var BUDGET = [[1,'Tot €10'],[2,'Tot €25'],[3,'Tot €50'],[4,'Tot €100']];
+  var TIER = {1:'Onder €10',2:'€10 tot €25',3:'€25 tot €50',4:'€50 tot €100'};
+  var TITEL = {fijnproever:'een fijnproever',huis:'een nieuw huis',hem:'hem',haar:'haar',kind:'een kind',collega:'een collega',gamer:'een gamer',alles:'iemand die alles al heeft'};
+
+  var producten = [], wie = 'fijnproever', budget = 3, weg = [], bewaard = [];
+  try { bewaard = JSON.parse(localStorage.getItem('ck-bewaard') || '[]'); } catch(e){ bewaard = []; }
+
+  function bewaar(){ try { localStorage.setItem('ck-bewaard', JSON.stringify(bewaard)); } catch(e){} }
+  function bol(q){
+    return 'https://partner.bol.com/click/click?p=2&t=url&s=' + S + '&f=TXL&url=' +
+      encodeURIComponent('https://www.bol.com/nl/nl/s/?searchtext=' + encodeURIComponent(q)) +
+      '&name=' + encodeURIComponent(q);
+  }
+  function url(p){ return p.zoekterm === 'GTA6' ? 'https://hetgamekompas.nl' : bol(p.zoekterm); }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function chips(){
+    document.getElementById('wie').innerHTML = WIE.map(function(w){
+      return '<button type="button" class="chip" data-id="' + w[0] + '" aria-pressed="' + (wie===w[0]) + '">' + esc(w[1]) + '</button>';
+    }).join('');
+    document.getElementById('budget').innerHTML = BUDGET.map(function(b){
+      return '<button type="button" class="chip vierkant" data-id="' + b[0] + '" aria-pressed="' + (budget===b[0]) + '">' + esc(b[1]) + '</button>';
+    }).join('');
+  }
+
+  function toon(){
+    var pool = producten.filter(function(p){ return p.voor === wie && p.budget <= budget && weg.indexOf(p.naam) === -1; })
+                        .sort(function(a,b){ return b.budget - a.budget; }).slice(0,6);
+    document.getElementById('titel').textContent = 'Cadeaus voor ' + TITEL[wie];
+    document.getElementById('aantal').textContent = pool.length === 1 ? '1 idee' : pool.length + ' ideeën';
+    document.getElementById('kaarten').innerHTML = pool.length ? pool.map(function(p){
+      var isB = bewaard.indexOf(p.naam) !== -1;
+      return '<article class="kaart">' +
+        '<div class="kaartkop"><h3>' + esc(p.naam) + '</h3><span class="prijs">' + TIER[p.budget] + '</span></div>' +
+        '<div><p class="label" style="color:var(--groen)">Waarom dit past</p><p style="margin-top:2px;font-size:16px;color:var(--mid)">' + esc(p.waarom) + '</p></div>' +
+        '<div><p class="label" style="color:var(--rood)">Kies iets anders</p><p style="margin-top:2px;font-size:16px;color:var(--mid)">Als ' + esc(p.anders) + '</p></div>' +
+        '<a class="knop" href="' + url(p) + '" rel="sponsored nofollow">' + (p.zoekterm === 'GTA6' ? 'Lees de koopgids' : 'Bekijk bij bol') + '</a>' +
+        '<div class="mini">' +
+        '<button type="button" data-bewaar="' + esc(p.naam) + '" aria-pressed="' + isB + '"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="' + (isB ? '#F26B4E' : 'none') + '" stroke="#F26B4E" stroke-width="1.8"><path d="M8 13.5S2 9.8 2 5.9A3.2 3.2 0 0 1 8 4.4a3.2 3.2 0 0 1 6 1.5c0 3.9-6 7.6-6 7.6z"/></svg>' + (isB ? 'Bewaard' : 'Bewaar idee') + '</button>' +
+        '<button type="button" data-weg="' + esc(p.naam) + '">Heeft die al</button>' +
+        '</div></article>';
+    }).join('') : '<p style="padding:24px;border:1px dashed var(--grijs);border-radius:20px">Geen ideeën meer binnen dit budget. Kies een hoger budget of een andere persoon.</p>';
+
+    document.getElementById('teller').textContent = bewaard.length;
+    var lijst = producten.filter(function(p){ return bewaard.indexOf(p.naam) !== -1; });
+    document.getElementById('bewaardlijst').innerHTML = lijst.map(function(p){
+      return '<div class="bewaardrij"><a href="' + url(p) + '" rel="sponsored nofollow" style="font-weight:700">' + esc(p.naam) + '</a><button type="button" data-bewaar="' + esc(p.naam) + '">Verwijder</button></div>';
+    }).join('');
+  }
+
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('button, a.gids') : null;
+    if (!el) return;
+    if (el.classList.contains('chip')){
+      var id = el.getAttribute('data-id');
+      if (el.parentNode.id === 'wie'){ wie = id; } else { budget = parseInt(id, 10); }
+      weg = []; chips(); toon(); return;
+    }
+    if (el.hasAttribute('data-bewaar')){
+      var n = el.getAttribute('data-bewaar');
+      var i = bewaard.indexOf(n);
+      if (i === -1) bewaard.push(n); else bewaard.splice(i, 1);
+      bewaar(); toon(); return;
+    }
+    if (el.hasAttribute('data-weg')){ weg.push(el.getAttribute('data-weg')); toon(); return; }
+    if (el.hasAttribute('data-wie')){
+      wie = el.getAttribute('data-wie'); budget = parseInt(el.getAttribute('data-budget'), 10);
+      weg = []; chips(); toon();
+      document.getElementById('resultaat').scrollIntoView({behavior:'smooth'});
+    }
+  });
+
+  chips();
+  fetch('/producten.json').then(function(r){ return r.json(); })
+    .then(function(j){ producten = j; toon(); })
+    .catch(function(){ document.getElementById('kaarten').innerHTML = '<p>De cadeaulijst kon niet worden geladen. Probeer de pagina te verversen.</p>'; });
+})();
+</script>
+</body>
+</html>
