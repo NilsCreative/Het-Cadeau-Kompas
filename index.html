@@ -228,12 +228,15 @@ footer .wrap{padding-top:28px;padding-bottom:36px}
           if (!kaart) return;
           var vak = kaart.querySelector('.foto');
           if (vak && d.afbeelding) {
+            // Het vak meteen tonen. Wachten op onload kan niet in combinatie
+            // met lazy loading: een verborgen afbeelding wordt nooit geladen,
+            // dus blijft het vak voor altijd verborgen.
             var img = new Image();
             img.alt = p.naam;
-            img.loading = 'lazy';
-            img.onload = function(){ vak.classList.add('aan'); };
+            img.onerror = function(){ vak.classList.remove('aan'); };
             img.src = d.afbeelding;
             vak.appendChild(img);
+            vak.classList.add('aan');
           }
           if (d.prijs !== null && d.prijs !== undefined) {
             var pr = kaart.querySelector('.prijs');
