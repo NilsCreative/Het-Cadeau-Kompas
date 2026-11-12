@@ -77,7 +77,7 @@ async function haalToken(diag) {
 async function zoek(term, bearer, diag) {
   const url = ZOEK_URL
     + '?search-term=' + encodeURIComponent(term)
-    + '&country-code=NL&page-size=1&include-image=true&include-offer=true';
+    + '&country-code=NL&page-size=10&include-image=true&include-offer=true';
 
   const ctrl = new AbortController();
   const stop = setTimeout(() => ctrl.abort(), 8000);
@@ -105,8 +105,41 @@ async function zoek(term, bearer, diag) {
   }
 }
 
-function eersteResultaat(data) {
-  const p = data && Array.isArray(data.results) ? data.results[0] : null;
+// Woorden die erop wijzen dat het om een accessoire gaat in plaats van om
+// het product zelf. Op 'aeropress' zet bol de filterzakjes bovenaan, en die
+// wil je niet op je kaart met de prijs van het apparaat ernaast.
+const BIJZAAK = ['filter', 'navul', 'refill', 'hoes', 'sleeve', 'cover',
+  'beschermhoe', 'reserve', 'onderdel', 'accessoire', 'reinig', 'ontkalk',
+  'zakjes', 'vervang', 'opzetstuk', 'adapter', 'kabel', 'batterij',
+  'etui', 'opbergtas', 'schoonmaak', 'vulling', 'papieren'];
+
+function beste(data, term) {
+  const r = data && Array.isArray(data.results) ? data.results : [];
+  if (!r.length) return null;
+
+  const t = String(term || '').toLowerCase();
+  const woorden = t.split(/\s+/).filter(Boolean);
+
+  let winnaar = null, hoogste = -Infinity;
+  r.forEach((p, i) => {
+    const titel = String(p.title || '').toLowerCase();
+    let punten = 0;
+    woorden.forEach((w) => { if (titel.indexOf(w) !== -1) punten += 3; });
+    // Alleen straffen als het woord niet zelf in de zoekterm staat, anders
+    // zou 'koffiefilter' zichzelf wegstrepen.
+    BIJZAAK.forEach((b) => {
+      if (titel.indexOf(b) !== -1 && t.indexOf(b) === -1) punten -= 6;
+    });
+    if (!p.image || !p.image.url) punten -= 10;
+    if (!p.offer || p.offer.price == null) punten -= 4;
+    punten -= i * 0.1; // bij gelijke stand wint de hoogste in de zoekresultaten
+    if (punten > hoogste) { hoogste = punten; winnaar = p; }
+  });
+  return winnaar;
+}
+
+function eersteResultaat(data, term) {
+  const p = beste(data, term);
   if (!p) return null;
   const prijs = p.offer && p.offer.price != null ? Number(p.offer.price) : null;
   return {
@@ -147,7 +180,8 @@ export default async function handler(req, res) {
     const bearer = await haalToken(diag);
     if (bearer && termen.length) {
       diag.antwoord = await zoek(termen[0], bearer, diag);
-      diag.genormaliseerd = eersteResultaat(diag.antwoord);
+      diag.genormaliseerd = eersteResultaat(diag.antwoord, termen[0]);
+      diag.gevonden = (diag.antwoord && diag.antwoord.results || []).map((x) => x.title);
     }
     diag.gelukt = !!(diag.genormaliseerd && diag.genormaliseerd.afbeelding);
     return res.status(200).json(diag);
@@ -162,7 +196,7 @@ export default async function handler(req, res) {
   const uit = {};
   const delen = await Promise.all(termen.map((t) => zoek(t, bearer, null)));
   termen.forEach((t, i) => {
-    const p = eersteResultaat(delen[i]);
+    const p = eersteResultaat(delen[i], t);
     if (p && p.afbeelding) uit[t] = p;
   });
 
