@@ -56,6 +56,9 @@ section{padding-top:34px}
 @media(min-width:700px){.kaarten{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}}
 .kaart{background:#fff;border:1px solid var(--rand);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:12px}
 @media(min-width:900px){.kaart{padding:24px}}
+.foto{aspect-ratio:4/3;background:#F6F3EE;border-radius:14px;display:none;align-items:center;justify-content:center;overflow:hidden}
+.foto.aan{display:flex}
+.foto img{max-width:86%;max-height:86%;object-fit:contain}
 .kaartkop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .prijs{flex:0 0 auto;background:#FDE3DB;color:#8A2A18;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px}
 .label{font-size:13px;font-weight:700}
@@ -195,6 +198,10 @@ footer .wrap{padding-top:28px;padding-bottom:36px}
       encodeURIComponent('https://www.bol.com/nl/nl/s/?searchtext=' + encodeURIComponent(q)) +
       '&name=' + encodeURIComponent(q);
   }
+  function partner(doel, naam){
+    return 'https://partner.bol.com/click/click?p=2&t=url&s=' + S + '&f=TXL&url=' +
+      encodeURIComponent(doel) + '&name=' + encodeURIComponent(naam);
+  }
   function url(p){ return p.zoekterm === 'GTA6' ? 'https://hetgamekompas.nl' : bol(p.zoekterm); }
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -207,14 +214,49 @@ footer .wrap{padding-top:28px;padding-bottom:36px}
     }).join('');
   }
 
+  function verrijk(pool){
+    var termen = [];
+    pool.forEach(function(p){ if (p.zoekterm !== 'GTA6') termen.push(p.zoekterm); });
+    if (!termen.length) return;
+    fetch('/api/product?q=' + encodeURIComponent(termen.join(';')))
+      .then(function(r){ return r.ok ? r.json() : {}; })
+      .then(function(data){
+        pool.forEach(function(p, i){
+          var d = data[p.zoekterm];
+          if (!d) return;
+          var kaart = document.querySelector('#kaarten .kaart[data-i="' + i + '"]');
+          if (!kaart) return;
+          var vak = kaart.querySelector('.foto');
+          if (vak && d.afbeelding) {
+            var img = new Image();
+            img.alt = p.naam;
+            img.loading = 'lazy';
+            img.onload = function(){ vak.classList.add('aan'); };
+            img.src = d.afbeelding;
+            vak.appendChild(img);
+          }
+          if (d.prijs !== null && d.prijs !== undefined) {
+            var pr = kaart.querySelector('.prijs');
+            if (pr) pr.textContent = '\u20AC ' + Number(d.prijs).toFixed(2).replace('.', ',');
+          }
+          if (d.url) {
+            var a = kaart.querySelector('a.knop');
+            if (a) a.href = partner(d.url, p.naam);
+          }
+        });
+      })
+      .catch(function(){});
+  }
+
   function toon(){
     var pool = producten.filter(function(p){ return p.voor === wie && p.budget <= budget && weg.indexOf(p.naam) === -1; })
                         .sort(function(a,b){ return b.budget - a.budget; }).slice(0,6);
     document.getElementById('titel').textContent = 'Cadeaus voor ' + TITEL[wie];
     document.getElementById('aantal').textContent = pool.length === 1 ? '1 idee' : pool.length + ' ideeën';
-    document.getElementById('kaarten').innerHTML = pool.length ? pool.map(function(p){
+    document.getElementById('kaarten').innerHTML = pool.length ? pool.map(function(p, i){
       var isB = bewaard.indexOf(p.naam) !== -1;
-      return '<article class="kaart">' +
+      return '<article class="kaart" data-i="' + i + '">' +
+        '<div class="foto"></div>' +
         '<div class="kaartkop"><h3>' + esc(p.naam) + '</h3><span class="prijs">' + TIER[p.budget] + '</span></div>' +
         '<div><p class="label" style="color:var(--groen)">Waarom dit past</p><p style="margin-top:2px;font-size:16px;color:var(--mid)">' + esc(p.waarom) + '</p></div>' +
         '<div><p class="label" style="color:var(--rood)">Kies iets anders</p><p style="margin-top:2px;font-size:16px;color:var(--mid)">Als ' + esc(p.anders) + '</p></div>' +
@@ -224,6 +266,8 @@ footer .wrap{padding-top:28px;padding-bottom:36px}
         '<button type="button" data-weg="' + esc(p.naam) + '">Heeft die al</button>' +
         '</div></article>';
     }).join('') : '<p style="padding:24px;border:1px dashed var(--grijs);border-radius:20px">Geen ideeën meer binnen dit budget. Kies een hoger budget of een andere persoon.</p>';
+
+    verrijk(pool);
 
     document.getElementById('teller').textContent = bewaard.length;
     var lijst = producten.filter(function(p){ return bewaard.indexOf(p.naam) !== -1; });

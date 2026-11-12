@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sinterklaasgedicht maken: gratis en in een minuut klaar | Het Cadeaukompas</title>
-<meta name="description" content="Vul een naam in, kies een eigenschap en krijg meteen een Sinterklaasgedicht dat je mag overnemen. Gratis, zonder account, met tips om er zelf een te schrijven.">
+<meta name="description" content="Maak gratis een sinterklaasgedicht. Vul naam, eigenschap en cadeau in, kies lief, plagerig of grappig en kort of lang. Direct klaar om over te nemen.">
 <link rel="canonical" href="https://hetcadeaukompas.nl/sinterklaasgedicht">
 <meta name="theme-color" content="#FFF8EA">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:site_name" content="Het Cadeaukompas">
 <meta property="og:title" content="Sinterklaasgedicht maken, gratis en in een minuut">
-<meta property="og:description" content="Naam invullen, eigenschap kiezen, gedicht klaar.">
+<meta property="og:description" content="Naam, eigenschap en cadeau invullen. Kies de toon en de lengte. Je gedicht staat er meteen.">
 <meta property="og:url" content="https://hetcadeaukompas.nl/sinterklaasgedicht">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -54,6 +54,9 @@ input[type=text]{width:100%;height:52px;border-radius:10px;border:2px solid var(
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{min-height:46px;padding:0 16px;border-radius:999px;border:2px solid var(--grijs);background:#fff;color:var(--inkt);font-family:inherit;font-weight:700;font-size:16px;cursor:pointer}
 .chip[aria-pressed=true]{background:var(--rood);color:#fff;border-color:var(--rood)}
+#suggesties{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:6px;margin-right:-20px;padding-right:20px}
+#suggesties .chip{flex:0 0 auto;white-space:nowrap;min-height:40px;font-size:15px;font-weight:400;padding:0 14px}
+@media(min-width:900px){#suggesties{flex-wrap:wrap;overflow:visible;margin-right:0;padding-right:0}}
 .brief{background:#fff;border:1px solid var(--grijs);border-radius:4px;padding:22px;transform:rotate(-1deg);animation:brief .45s ease-out}
 @media(min-width:900px){.brief{padding:34px}}
 .brief p{font-family:'Gloock',serif;font-size:18px;line-height:1.65;white-space:pre-line}
@@ -102,13 +105,18 @@ footer .wrap{padding-top:24px;padding-bottom:34px}
 <p style="font-weight:700;color:var(--rood);margin-bottom:6px" id="aftellen">Aftellen naar pakjesavond</p>
 </div>
 <h1 style="margin-top:14px">Sinterklaasgedicht maken</h1>
-<p style="margin:10px 0 24px;color:#3D2E22">Vul een naam in en kies wat bij diegene past. Het gedicht staat er meteen en je mag het overnemen zoals je wilt.</p>
+<p style="margin:10px 0 24px;color:#3D2E22">Vul in voor wie het is en wat typisch voor diegene is. Kies of het lief, plagerig of grappig moet worden en hoe lang. Het gedicht staat er meteen en je mag het overnemen zoals je wilt.</p>
 <label for="naam">Voor wie is het gedicht?</label>
 <input id="naam" type="text" value="Sam" autocomplete="off">
-<p style="font-weight:700;margin:18px 0 8px">Hoe zou je diegene omschrijven?</p>
-<div class="chips" id="eigenschappen"></div>
+<label for="ding" style="margin-top:18px">Wat is typisch voor diegene?</label>
+<input id="ding" type="text" placeholder="bijvoorbeeld: altijd te laat komen" autocomplete="off">
+<div class="chips" id="suggesties" style="margin-top:10px"></div>
 <label for="cadeau" style="margin-top:18px">Wat zit er in het pakje? <span style="font-weight:400;color:var(--zacht)">Mag je overslaan.</span></label>
 <input id="cadeau" type="text" placeholder="bijvoorbeeld: een boek" autocomplete="off">
+<p style="font-weight:700;margin:18px 0 8px">Welke toon?</p>
+<div class="chips" id="toon"></div>
+<p style="font-weight:700;margin:18px 0 8px">Hoe lang mag het worden?</p>
+<div class="chips" id="lengte"></div>
 </div>
 <div class="rechts">
 <div class="brief" id="brief">
@@ -135,6 +143,7 @@ footer .wrap{padding-top:24px;padding-bottom:34px}
 <li><strong>Begin bij &eacute;&eacute;n eigenschap of gewoonte.</strong> Iemand die altijd te laat komt of nooit zijn koffie opdrinkt, geeft je meteen een onderwerp.</li>
 <li><strong>Plaag, maar blijf aardig.</strong> Het gedicht wordt hardop voorgelezen waar de hele familie bij zit.</li>
 <li><strong>Zet het rijmwoord aan het eind en bouw de zin ervoor.</strong> Dat gaat veel makkelijker dan achteraf een rijm zoeken.</li>
+<li><strong>Bewaar het cadeau tot het eind.</strong> De hele opbouw werkt naar dat ene moment toe, dus verklap het niet in regel twee.</li>
 <li><strong>Vier tot acht regels is genoeg.</strong> Bij een klein cadeau hoort een kort gedicht.</li>
 </ol>
 </div>
@@ -160,6 +169,10 @@ footer .wrap{padding-top:24px;padding-bottom:34px}
 <details><summary>Is deze gedichtenmaker gratis?</summary><p style="margin-top:10px;color:#3D2E22">Ja. Je hoeft geen account aan te maken en je mag de gedichten vrij gebruiken.</p></details>
 <details><summary>Mag ik het gedicht aanpassen?</summary><p style="margin-top:10px;color:#3D2E22">Graag zelfs. Kopieer het gedicht en verander een regel, dan wordt het persoonlijker.</p></details>
 <details><summary>Wanneer is pakjesavond in 2026?</summary><p style="margin-top:10px;color:#3D2E22">Op zaterdag 5 december 2026.</p></details>
+<details><summary>Hoe lang moet een sinterklaasgedicht zijn?</summary><p style="margin-top:10px;color:#3D2E22">Acht tot zestien regels is voor de meeste cadeaus genoeg. Een gedicht wordt hardop voorgelezen, en na een minuut dwalen de gedachten af. Hoort er een groot cadeau of een surprise bij, dan mag het langer. Hier kies je kort, normaal of lang en zie je meteen het verschil.</p></details>
+<details><summary>Hoe begin ik een sinterklaasgedicht?</summary><p style="margin-top:10px;color:#3D2E22">Begin niet bij het cadeau maar bij de persoon. Noem iets wat diegene het afgelopen jaar deed of iets wat typisch voor hem of haar is. Het cadeau komt pas aan het eind, want dat is de verrassing.</p></details>
+<details><summary>Mag ik iemand plagen in het gedicht?</summary><p style="margin-top:10px;color:#3D2E22">Dat hoort er juist bij, zolang het over iets onschuldigs gaat en diegene erom kan lachen. Houd het bij gewoontes, niet bij uiterlijk, werk of iets gevoeligs. Het wordt voorgelezen waar iedereen bij zit.</p></details>
+<details><summary>Rijmt het gedicht altijd goed?</summary><p style="margin-top:10px;color:#3D2E22">Ja. Wat jij invult staat nooit op de plek waar het rijm valt, dus het klopt ook bij een lange naam of een ongewoon cadeau.</p></details>
 </div>
 </div>
 </section>
@@ -174,7 +187,10 @@ footer .wrap{padding-top:24px;padding-bottom:34px}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Is deze sinterklaasgedichten-maker gratis?","acceptedAnswer":{"@type":"Answer","text":"Ja, het maken van een gedicht is gratis en er is geen account nodig."}},
-{"@type":"Question","name":"Wanneer is pakjesavond in 2026?","acceptedAnswer":{"@type":"Answer","text":"Pakjesavond valt in 2026 op zaterdag 5 december."}}]}
+{"@type":"Question","name":"Wanneer is pakjesavond in 2026?","acceptedAnswer":{"@type":"Answer","text":"Pakjesavond valt in 2026 op zaterdag 5 december."}},
+{"@type":"Question","name":"Hoe lang moet een sinterklaasgedicht zijn?","acceptedAnswer":{"@type":"Answer","text":"Acht tot zestien regels is voor de meeste cadeaus genoeg, omdat een gedicht hardop wordt voorgelezen. Bij een groot cadeau of een surprise mag het langer."}},
+{"@type":"Question","name":"Hoe begin ik een sinterklaasgedicht?","acceptedAnswer":{"@type":"Answer","text":"Begin bij de persoon en niet bij het cadeau. Noem een gewoonte of iets wat diegene het afgelopen jaar deed. Het cadeau komt pas aan het eind, want dat is de verrassing."}},
+{"@type":"Question","name":"Mag ik iemand plagen in een sinterklaasgedicht?","acceptedAnswer":{"@type":"Answer","text":"Plagen hoort erbij, zolang het over een onschuldige gewoonte gaat en diegene erom kan lachen. Houd uiterlijk, werk en gevoelige onderwerpen eruit."}}]}
 </script>
 
 <script>
@@ -185,75 +201,389 @@ footer .wrap{padding-top:24px;padding-bottom:34px}
       encodeURIComponent('https://www.bol.com/nl/nl/s/?searchtext=' + encodeURIComponent(q)) +
       '&name=' + encodeURIComponent(q);
   }
-  var EIG = ['lief','grappig','sportief','eigenwijs','slim','gezellig'];
-  var eig = 'lief', variant = 0;
+  // --- Gedichtenmotor -------------------------------------------------
+  // Alles wat de bezoeker invult staat nooit op de rijmpositie. Daardoor
+  // klopt het rijm altijd, hoe gek de invoer ook is.
 
-  var CADEAUS = [
-    ['Schoencadeautjes','Klein spul voor in de schoen, tot een paar euro.','schoencadeautjes'],
-    ['Chocoladeletters','De klassieker die bij elk gedicht past.','chocoladeletter'],
-    ['Cadeaus rond een tientje','Voor het lootje op het werk of op school.','cadeau 10 euro'],
-    ['Cadeaus tot 25 euro','Voor lootjes in de familie.','cadeau 25 euro']
+  var OPENING = [
+    ['Sinterklaas zat diep te denken,',
+     'hij had het dit jaar razend druk.',
+     'Toch bleef hij bij één naam wat hangen,',
+     'en dat was {naam}, wat een geluk.'],
+    ['De Pieten pakten alles in,',
+     'de laatste dozen stonden klaar.',
+     'Maar één cadeau lag nog apart,',
+     'met de naam van {naam} erop, voorwaar.'],
+    ['De boot lag al een poos in de haven,',
+     'de Pieten stonden allang klaar.',
+     'Toch moest er nog één pakje mee,',
+     'en dat was voor {naam}, helemaal waar.'],
+    ['De Sint sloeg het grote boek weer open,',
+     'hij was al dagen op zoek.',
+     'Naar iemand die iets moois verdient,',
+     'en {naam} stond vooraan in dat boek.'],
+    ['Piet, zei de Sint, geef mij de pen,',
+     'ik weet al wat ik schrijven ga.',
+     'Het gaat vanavond over {naam},',
+     'dus luister maar eens goed hierna.'],
+    ['Het was al laat, het was al donker,',
+     'de Pieten werkten door tot diep in de nacht.',
+     'Er moest nog \u00e9\u00e9n gedicht geschreven,',
+     'en dat was voor {naam}, wie had dat gedacht.'],
+    ['De Sint kwam binnen door de deur,',
+     'de kamer vulde zich met geur.',
+     'Hij had het pakje van {naam} erbij',
+     'en zette het alvast opzij.'],
+    ['De stoomboot lag al voor de kust,',
+     'de Pieten hadden amper rust.',
+     'Toch pakten ze voor {naam} iets in,',
+     'en daar had iedereen wel zin.'],
+    ['Het boek lag open op de tafel,',
+     'de Sint was er bijna mee gedaan.',
+     'Alleen bij {naam} moest nog iets bij,',
+     'daar bleef zijn pen even stil staan.'],
+    ['De Sint keek op de klok en zuchtte,',
+     'hij had bijna geen tijd.',
+     'Maar het gedicht voor {naam} moest af,',
+     'anders was de avond kwijt.']
   ];
-  document.getElementById('cadeaulijst').innerHTML = CADEAUS.map(function(c){
-    return '<a class="rij" href="' + bol(c[2]) + '" rel="sponsored nofollow"><span><b>' + c[0] + '</b><span>' + c[1] + '</span></span><span aria-hidden="true">&rsaquo;</span></a>';
-  }).join('') + '<a class="rij" href="/"><span><b>Liever persoonlijk advies?</b><span>De keuzehulp zoekt een cadeau dat bij diegene past.</span></span><span aria-hidden="true">&rsaquo;</span></a>';
 
-  document.getElementById('eigenschappen').innerHTML = EIG.map(function(e){
-    return '<button type="button" class="chip" data-eig="' + e + '" aria-pressed="' + (e === eig) + '">' + e + '</button>';
-  }).join('');
+  var MIDDEN = {
+    lief: [
+      ['Want {ding}, daar draait het bij jou om,',
+       'daar kun je uren mee bezig zijn.',
+       'De Sint heeft dat allang gezien',
+       'en vindt dat eerlijk gezegd heel fijn.'],
+      ['Je hoeft van hem niet anders te doen,',
+       'je bent al goed zoals je bent.',
+       'Met {ding} als vaste rode draad',
+       'is dat precies waaraan men jou herkent.'],
+      ['De Sint hoorde van alle kanten',
+       'dat jij er dit jaar echt voor ging.',
+       'Met {ding} ben je niet te stoppen,',
+       'en dat is toch een mooi ding.'],
+      ['Piet zei: die verdient wel wat,',
+       'want die doet altijd zijn best.',
+       'Zeker als het over {ding} gaat,',
+       'dan laat diegene het nooit aan de rest.'],
+      ['De Sint zei tegen Piet: let op,',
+       'kijk eens hoe het daar nu staat.',
+       'Want {ding}, dat doet niet iedereen,',
+       'en dat is waar het hier om gaat.'],
+      ['Er is veel gebeurd het afgelopen jaar,',
+       'en jij stond er telkens weer.',
+       'Met {ding} erbij, gewoon omdat het kan,',
+       'en dat betekent heus wel meer.'],
+      ['De Sint ziet dat soort dingen wel,',
+       'hij kijkt er elke dag naar.',
+       'Hoe jij met {ding} bezig bent,',
+       'dat maakt hem oprecht blij, voorwaar.'],
+      ['Het valt niet altijd op wat iemand doet,',
+       'en toch telt het allemaal mee.',
+       'Jouw {ding} hoort daar ook bij,',
+       'en dat vindt de Sint oprecht ok\u00e9.']
+    ],
+    plagerig: [
+      ['Nu moet de Sint wel eerlijk zijn,',
+       'want Piet heeft het ook gezien.',
+       'Met {ding} gaat het niet altijd goed,',
+       'of nou ja, soms wel, misschien.'],
+      ['Piet moest even hard lachen',
+       'toen hij aan vorig jaar dacht.',
+       'Toen ging het ook al mis met {ding},',
+       'dat had toen niemand verwacht.'],
+      ['De Sint zegt: we doen niet moeilijk,',
+       'hij houdt het liever licht.',
+       'Maar over {ding} valt wel wat te zeggen,',
+       'en dat staat nu in dit gedicht.'],
+      ['Piet hield de lijst omhoog en riep:',
+       'hier klopt iets niet, kijk maar.',
+       'Bij {ding} staat een dikke streep,',
+       'en die staat er al een jaar.'],
+      ['De Sint bladerde in zijn boek',
+       'en werd bij \u00e9\u00e9n stukje heel stil.',
+       'Daar stond iets over {ding},',
+       'en dat las hij niet hardop, als je wil.'],
+      ['Je hebt het vast wel goedbedoeld,',
+       'dat heeft de Sint ook wel geloofd.',
+       'Maar met {ding} ging het weer mis,',
+       'precies zoals je had beloofd.'],
+      ['Piet keek de Sint eens vragend aan:',
+       'moeten we dit echt vermelden?',
+       'Zet {ding} er maar gewoon bij,',
+       'zei de Sint, het is nu eenmaal gedaan.'],
+      ['De Sint zegt: ik zeg verder niets,',
+       'hij houdt van een beetje pret.',
+       'Maar aan {ding} wordt gedacht,',
+       'en daar wordt stiekem op gelet.']
+    ],
+    grappig: [
+      ['Piet gleed vanochtend van het dak,',
+       'dat ging niet echt met veel gemak.',
+       'Hij had {ding} nog in zijn hand',
+       'en kwam zo keurig in het zand.'],
+      ['De Sint moest lachen om een verhaal,',
+       'dat ging een beetje over jou.',
+       'Het had te maken met {ding},',
+       'meer zegt hij niet, want dat is flauw.'],
+      ['In het pakhuis ging het mis,',
+       'twee Pieten waren het oneens.',
+       'De een zei: het gaat over {ding},',
+       'de ander riep: welnee, geen eens.'],
+      ['De Sint schreef iets in zijn boek',
+       'en streepte het toen weer door.',
+       'Want bij {ding} wist hij het niet meer,',
+       'en dat kwam nooit eerder voor.'],
+      ['Piet was zijn pepernoten kwijt,',
+       'hij zocht ze overal op het dak.',
+       'Volgens hem kwam dat door {ding},',
+       'maar ze zaten gewoon nog in zijn zak.'],
+      ['Het paard van Sinterklaas stond stil',
+       'en kwam niet weg bij de haard.',
+       'Dat kwam ergens door {ding},',
+       'al werd dat nooit goed verklaard.'],
+      ['De Sint keek nog eens op zijn lijst',
+       'en dacht: ik heb me vast vergist.',
+       'Want {ding} stond er twee keer op,',
+       'en zoiets was nog nooit gemist.'],
+      ['Piet viel vanmorgen van de trap,',
+       'dat ging met een flinke klap.',
+       'Hij was gestruikeld over {ding},',
+       'en noemde het later maar een grap.']
+    ]
+  };
 
-  function gedicht(){
-    var naam = (document.getElementById('naam').value || '').trim() || 'jij';
-    var cadeau = (document.getElementById('cadeau').value || '').trim();
-    var G = [
-      'Sint zat te peinzen, de avond was al laat:\nwat geef je ' + naam + ', die altijd voor je klaarstaat?\nPiet riep meteen: "Ik weet het, wacht maar af!"\nDus pak maar gauw uit, dit is wat Sint je gaf.',
-      'Lieve ' + naam + ', wat was je weer ' + eig + ' dit jaar,\ndat zag de Sint vanuit Spanje heus wel, echt waar.\nDaarom ligt hier iets moois, speciaal voor jou,\nmet de groeten van Piet, die het inpakken wou.',
-      'De Sint keek in zijn boek en zag daar ' + naam + ' staan,\n"' + eig + '" stond erbij, dus dat is goed gegaan.\nHij zocht en hij zocht, de hele pakjesnacht,\nen heeft tot slot dit cadeau voor jou meegebracht.',
-      'Wie klopt daar op de deur, ' + naam + '? Het is de Sint,\ndie jou al jaren heel bijzonder vindt.\nZo ' + eig + ' als jij zijn er maar weinig, dat is waar,\ndus dit pakje stond al weken voor je klaar.'
-    ];
-    var t = G[variant % G.length];
-    if (cadeau) t += '\nHet werd ' + cadeau + ', dat leek hem goed voor jou,\ndus pakte Piet het in, met strik en al, heel gauw.';
-    return t;
+  var ONTHULLING = [
+    ['Dus pak maar uit en kijk goed rond,',
+     'er staat iets moois voor je klaar.',
+     'Het is {cadeau} geworden,',
+     'en de Sint meent het, echt waar.'],
+    ['Genoeg gepraat, het is zover,',
+     'het wachten duurde al te lang.',
+     'Er zit {cadeau} in dit pakje,',
+     'dus wees vooral niet meer zo bang.'],
+    ['De Sint zei: geef het pakje maar,',
+     'en Piet schoof het naar voren.',
+     'Er zit {cadeau} in, zei hij,',
+     'dat mocht je toch al horen.'],
+    ['Dus scheur het papier er maar vanaf,',
+     'maar wees voorzichtig met het touw.',
+     'Er komt {cadeau} tevoorschijn,',
+     'en dat is helemaal voor jou.'],
+    ['Piet zei: dit koos ik zelf uit,',
+     'de Sint knikte alleen maar ja.',
+     'Het werd {cadeau} dit jaar,',
+     'en daar doen we het mee, hoera.'],
+    ['Piet zette het pakje voor je neer',
+     'en zei er verder niets meer bij.',
+     'Er zit {cadeau} in dit pakje,',
+     'en daar was de Sint heel blij.'],
+    ['Nog even en dan weet je het,',
+     'de Sint telde alvast tot drie.',
+     'Er zit {cadeau} in het pakje,',
+     'dus kijk nu maar, dan zie je het, zie.'],
+    ['De Sint gaf het pakje in je hand,',
+     'het kwam helemaal uit dat warme land.',
+     'Er zit {cadeau} in verstopt,',
+     'en dat heeft Piet er zelf in gepropt.'],
+    ['De Sint stond lang te twijfelen,',
+     'want dit was een lastige keus.',
+     'Het werd {cadeau} uiteindelijk,',
+     'en daar wreef hij tevreden over zijn neus.'],
+    ['Kijk nu maar eens goed naar binnen,',
+     'het papier mag er gewoon af.',
+     'Het is {cadeau} geworden,',
+     'en dat is wat de Sint je gaf.']
+  ];
+
+  var GEHEIM = [
+    ['Wat er precies in het pakje zit,',
+     'dat zie je zo vanzelf wel.',
+     'De Sint heeft lang zitten zoeken,',
+     'dus maak het maar open, en snel.'],
+    ['Je mag natuurlijk eerst nog raden,',
+     'maar dat duurt de Sint te lang.',
+     'Dus scheur het papier er maar vanaf',
+     'en wees vooral niet bang.'],
+    ['Het pakje zit nog stevig dicht,',
+     'daar zorgde Piet wel voor.',
+     'Wat erin zit zie je zo meteen,',
+     'dus ga vooral je gang maar, hoor.'],
+    ['Je zou het toch nooit raden,',
+     'dus de Sint zegt het maar niet.',
+     'Haal het papier er gewoon af,',
+     'dan zie je vanzelf wat je ziet.']
+  ];
+
+  var SLOT = [
+    ['Veel plezier ermee dit jaar,',
+     'geniet er maar goed van.',
+     'Groetjes van de Sint en Piet,',
+     'tot volgend jaar weer, dan.'],
+    ['De Sint moet weer naar Spanje toe,',
+     'de boot vertrekt al bijna.',
+     'Hij wenst je een hele fijne avond',
+     'en zegt: tot ziens, ik ga.'],
+    ['Zo, dat was het dan alweer,',
+     'het papier mag in de zak.',
+     'Fijne pakjesavond, zei Piet,',
+     'en klom weer op het dak.'],
+    ['Nog één ding, zei de Sint erbij,',
+     'toen was het gedicht gedaan.',
+     'Geniet ervan, en tot volgend jaar,',
+     'dan komen we er weer aan.'],
+    ['Piet pakte zijn zak weer op,',
+     'de Sint zat alweer op zijn paard.',
+     'Veel plezier met het cadeau,',
+     'het was het wachten wel waard.'],
+    ['De Sint moet er weer vandoor,',
+     'zijn paard staat al te wachten.',
+     'Veel plezier vanavond nog,',
+     'en fijne feestelijke nachten.'],
+    ['Piet staat alweer bij de deur,',
+     'de volgende straat wacht al.',
+     'Tot volgend jaar, riep hij nog,',
+     'en weg was hij, met veel kabaal.'],
+    ['Schenk nog maar een kopje thee,',
+     'de avond is bijna voorbij.',
+     'De Sint en Piet gaan weer op pad',
+     'en groeten jou er nog eens bij.'],
+    ['Doe de deur maar weer dicht,',
+     'het tocht hier aan alle kant.',
+     'Veel plezier met je cadeau,',
+     'zei Piet, en zwaaide met zijn hand.'],
+    ['De Sint vertrok weer uit het huis,',
+     'Piet deed de deur voorzichtig dicht.',
+     'Geniet er maar van, riepen ze nog,',
+     'en daarmee eindigt dit gedicht.']
+  ];
+
+  var NEUTRAAL = ['alles wat jij doet', 'jouw manier van doen', 'waar jij goed in bent'];
+
+  var SUGGESTIES = ['altijd te laat komen', 'de hele dag op de telefoon zitten',
+    'nooit koffie opdrinken', 'alles willen opruimen', 'veel te hard werken',
+    'uren in de sportschool staan', 'gamen tot diep in de nacht', 'heerlijk kunnen koken'];
+
+  var TONEN = [['lief', 'Lief'], ['plagerig', 'Plagerig'], ['grappig', 'Grappig']];
+  var LENGTES = [['kort', 'Kort'], ['normaal', 'Normaal'], ['lang', 'Lang']];
+
+  var toon = 'plagerig', lengte = 'normaal';
+  var zaad = (Math.random() * 4294967295) >>> 0;
+
+  // Mengt het zaad per positie, zodat de opening, het midden, de onthulling
+  // en het slot onafhankelijk van elkaar wisselen in plaats van samen op te
+  // schuiven. Zonder dit zie je bij doorklikken steeds dezelfde combinaties.
+  function mix(z, k) {
+    var x = (z ^ Math.imul(k, 2654435761)) >>> 0;
+    x = Math.imul(x ^ (x >>> 15), 2246822519) >>> 0;
+    x = Math.imul(x ^ (x >>> 13), 3266489917) >>> 0;
+    return (x ^ (x >>> 16)) >>> 0;
   }
 
-  function teken(){
+  function pak(lijst, k) { return lijst[mix(zaad, k) % lijst.length]; }
+
+  function bouw() {
+    var naam = (document.getElementById('naam').value || '').trim() || 'jij';
+    var cadeau = (document.getElementById('cadeau').value || '').trim();
+    var ding = (document.getElementById('ding').value || '').trim() || pak(NEUTRAAL, 7);
+
+    var blokken = [pak(OPENING, 1)];
+    var m = MIDDEN[toon];
+
+    // Het middenstuk draagt de toon, dus ook een kort gedicht krijgt er een.
+    var i1 = mix(zaad, 2) % m.length;
+    blokken.push(m[i1]);
+    if (lengte === 'lang') {
+      blokken.push(m[(i1 + 1 + mix(zaad, 3) % (m.length - 1)) % m.length]);
+    }
+
+    blokken.push(cadeau ? pak(ONTHULLING, 4) : pak(GEHEIM, 5));
+    if (lengte !== 'kort') blokken.push(pak(SLOT, 6));
+
+    return blokken.map(function (b) {
+      return b.join('\n')
+        .replace(/\{naam\}/g, naam)
+        .replace(/\{ding\}/g, ding)
+        .replace(/\{cadeau\}/g, cadeau);
+    }).join('\n\n');
+  }
+
+  function chipsIn(id, paren, actief, attr) {
+    document.getElementById(id).innerHTML = paren.map(function (x) {
+      return '<button type="button" class="chip" data-' + attr + '="' + x[0] +
+        '" aria-pressed="' + (x[0] === actief) + '">' + x[1] + '</button>';
+    }).join('');
+  }
+
+  function teken() {
     var el = document.getElementById('gedicht');
-    el.textContent = gedicht();
+    el.textContent = bouw();
     var b = document.getElementById('brief');
     b.style.animation = 'none'; void b.offsetWidth; b.style.animation = '';
     document.getElementById('kopieer').textContent = 'Kopieer het gedicht';
   }
 
-  function aftellen(){
+  function aftellen() {
     var nu = new Date();
     var doel = new Date(nu.getFullYear(), 11, 5);
     if (nu > doel) doel = new Date(nu.getFullYear() + 1, 11, 5);
     var n = Math.ceil((doel - nu) / 86400000);
-    document.getElementById('aftellen').textContent = n === 1 ? 'Nog 1 nachtje slapen' : 'Nog ' + n + ' nachtjes slapen';
+    document.getElementById('aftellen').textContent =
+      n === 1 ? 'Nog 1 nachtje slapen' : 'Nog ' + n + ' nachtjes slapen';
   }
 
-  document.getElementById('naam').addEventListener('input', teken);
-  document.getElementById('cadeau').addEventListener('input', teken);
-  document.getElementById('ander').addEventListener('click', function(){ variant++; teken(); });
-  document.getElementById('eigenschappen').addEventListener('click', function(e){
-    var b = e.target.closest('button[data-eig]');
+  chipsIn('toon', TONEN, toon, 'toon');
+  chipsIn('lengte', LENGTES, lengte, 'lengte');
+  document.getElementById('suggesties').innerHTML = SUGGESTIES.map(function (t) {
+    return '<button type="button" class="chip" data-vul="' + t + '">' + t + '</button>';
+  }).join('');
+
+  ['naam', 'ding', 'cadeau'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', teken);
+  });
+
+  document.getElementById('suggesties').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-vul]');
     if (!b) return;
-    eig = b.getAttribute('data-eig');
-    Array.prototype.forEach.call(this.querySelectorAll('button'), function(x){
-      x.setAttribute('aria-pressed', x.getAttribute('data-eig') === eig);
-    });
+    document.getElementById('ding').value = b.getAttribute('data-vul');
     teken();
   });
-  document.getElementById('kopieer').addEventListener('click', function(){
-    var t = gedicht() + '\n\nSint en Piet';
+
+  document.getElementById('toon').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-toon]');
+    if (!b) return;
+    toon = b.getAttribute('data-toon');
+    chipsIn('toon', TONEN, toon, 'toon');
+    teken();
+  });
+
+  document.getElementById('lengte').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-lengte]');
+    if (!b) return;
+    lengte = b.getAttribute('data-lengte');
+    chipsIn('lengte', LENGTES, lengte, 'lengte');
+    teken();
+  });
+
+  document.getElementById('ander').addEventListener('click', function () {
+    var vorig = document.getElementById('gedicht').textContent;
+    for (var i = 0; i < 12; i++) {
+      zaad = (Math.random() * 4294967295) >>> 0;
+      if (bouw() !== vorig) break;
+    }
+    teken();
+  });
+
+  document.getElementById('kopieer').addEventListener('click', function () {
+    var t = bouw() + '\n\nSint en Piet';
     var knop = this;
-    function gelukt(){ knop.textContent = 'Gekopieerd'; }
-    if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(t).then(gelukt).catch(function(){});
+    function gelukt() { knop.textContent = 'Gekopieerd'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(gelukt).catch(function () {});
     } else {
       var ta = document.createElement('textarea');
       ta.value = t; document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); gelukt(); } catch(e){}
+      try { document.execCommand('copy'); gelukt(); } catch (e) {}
       document.body.removeChild(ta);
     }
   });
